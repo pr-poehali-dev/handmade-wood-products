@@ -165,8 +165,8 @@ export default function Index() {
           <nav className="hidden md:flex items-center gap-6">
             <a href="#catalog" className="text-sm font-medium hover:text-primary transition-colors">Каталог</a>
             <a href="#gallery" className="text-sm font-medium hover:text-primary transition-colors">Галерея</a>
+            <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
             <a href="#care" className="text-sm font-medium hover:text-primary transition-colors">Уход</a>
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О нас</a>
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
           </nav>
 
@@ -540,7 +540,174 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="about" className="py-20">
+      <section id="testimonials" className="py-20">
+        <div className="container">
+          <h2 className="text-4xl font-serif font-bold text-center mb-4">Отзывы клиентов</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Нам важно мнение каждого клиента
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">А</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Анна Петрова</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Заказала разделочную доску из дуба — потрясающее качество! Каждая деталь продумана, 
+                  дерево обработано идеально. Использую каждый день и очень довольна покупкой."
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">Д</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Дмитрий Соколов</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Купил набор кухонных принадлежностей в подарок жене. Она в восторге! 
+                  Мастера своего дела видно сразу. Буду заказывать еще — хочу салатницу."
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">Е</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Екатерина Волкова</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Заказывала индивидуальную миску из ореха. Результат превзошёл все ожидания! 
+                  Очень приятно держать в руках натуральное дерево. Спасибо мастерам!"
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">М</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Михаил Иванов</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Отличное качество изделий! Взял несколько подставок под горячее — выглядят стильно, 
+                  функциональны. Доставка быстрая, упаковка надёжная. Рекомендую!"
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">О</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Ольга Кузнецова</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Заказала большую салатницу для семейных ужинов. Невероятно красивая, 
+                  приятная на ощупь. Теплота дерева создаёт особую атмосферу за столом."
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-serif font-bold text-primary">С</span>
+                  </div>
+                  <div>
+                    <CardTitle className="font-serif text-lg">Сергей Морозов</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                      <Icon name="Star" size={16} className="fill-primary text-primary" />
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground italic">
+                  "Профессионалы высочайшего уровня! Заказал набор для кухни — каждая вещь уникальна. 
+                  Чувствуется ручная работа и забота о деталях. Буду советовать друзьям!"
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 bg-muted/30">
         <div className="container max-w-4xl text-center">
           <h2 className="text-4xl font-serif font-bold mb-6">О мастерской</h2>
           <p className="text-lg text-muted-foreground mb-4">
