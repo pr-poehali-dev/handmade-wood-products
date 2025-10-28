@@ -113,6 +113,7 @@ export default function Index() {
   const [selectedMaterial, setSelectedMaterial] = useState<string>('all');
   const [priceRange, setPriceRange] = useState<number[]>([0, 10000]);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
 
   const categories = ['all', ...Array.from(new Set(products.map(p => p.category)))];
@@ -170,7 +171,17 @@ export default function Index() {
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
           </nav>
 
-          <Sheet>
+          <div className="flex items-center gap-2">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Icon name="Menu" size={24} />
+            </Button>
+
+            <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="relative">
                 <Icon name="ShoppingCart" size={20} />
@@ -240,8 +251,66 @@ export default function Index() {
               )}
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </header>
+
+      <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+        <SheetContent side="left" className="w-[280px]">
+          <SheetHeader>
+            <SheetTitle className="font-serif flex items-center gap-2">
+              <Icon name="TreeDeciduous" size={24} className="text-primary" />
+              Меню
+            </SheetTitle>
+          </SheetHeader>
+          <nav className="flex flex-col gap-4 mt-8">
+            <a 
+              href="#catalog" 
+              className="text-lg font-medium hover:text-primary transition-colors py-2 flex items-center gap-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon name="ShoppingBag" size={20} />
+              Каталог
+            </a>
+            <Separator />
+            <a 
+              href="#gallery" 
+              className="text-lg font-medium hover:text-primary transition-colors py-2 flex items-center gap-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon name="Image" size={20} />
+              Галерея
+            </a>
+            <Separator />
+            <a 
+              href="#testimonials" 
+              className="text-lg font-medium hover:text-primary transition-colors py-2 flex items-center gap-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon name="MessageSquare" size={20} />
+              Отзывы
+            </a>
+            <Separator />
+            <a 
+              href="#care" 
+              className="text-lg font-medium hover:text-primary transition-colors py-2 flex items-center gap-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon name="Sparkles" size={20} />
+              Уход
+            </a>
+            <Separator />
+            <a 
+              href="#contact" 
+              className="text-lg font-medium hover:text-primary transition-colors py-2 flex items-center gap-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon name="Phone" size={20} />
+              Контакты
+            </a>
+          </nav>
+        </SheetContent>
+      </Sheet>
 
       <section className="relative h-[600px] flex items-center justify-center bg-gradient-to-br from-accent/20 to-secondary/20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-50"></div>
